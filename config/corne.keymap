@@ -37,15 +37,15 @@
 
             // --------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   | 
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   | 
+            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&td0       &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE    &lt 3 ENTER  &mo 2  &kp RALT
+&td0       &kp A  &kp S  &kp D     &kp F  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                        &kp LGUI  &mo 1  &It 3 SPACE    &lt 3 ENTER  &mo 2  &kp RALT
             >;
         };
 
@@ -54,15 +54,15 @@
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // | SHFT | BTCL| BT0 | BT1 | BT2 | BT3 |   | none | none |  -  |  =  |  [  |   ]  |
+            // | CTRL |     |     |LALT |RCTRL|     |   |     |     |     |     |  \  |   ~  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
 
             bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5             &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF    &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans             &kp INS          &kp DEL          &trans
+&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                 &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
+&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3           &none           &none          &kp MINUS      &kp EQUAL     &kp LBKT      &kp RBKT
+&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &kp LALT          &kp RCTRL     &rgb_ug RGB_EFF        &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp BACKSLASH   &kp GRAVE
+                                         &trans        &trans        &trans              &trans          &trans          &trans
             >;
         };
 
@@ -70,16 +70,16 @@
             display-name = "SYMBOL";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // |  TAB |  TS |  TS |  TS |  TS |  TS |   |  Y |HOME |  \  |PGUP |  U | BKSP |
+            // | SHFT |  TS |  TS |  TS |  TS |  TS |   |  J | END |  ↑  |PGDN |  I |   O  |
+            // | CTRL |  TS |  TS |  TS |  TS |  TS |   |INS |  ←  |  ↓  |  →  | DEL| ESC  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
 
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &none         &none         &none     &none     &none        &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none     &none     &none        &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                    &trans    &trans    &kp SPACE    &kp RET    &trans     &trans
+&trans    &trans    &trans    &trans    &trans    &trans         &kp Y  &kp HOME  &kp BACKSLASH  &kp PG_UP  &kp U  &kp BSPC
+&trans    &trans    &trans    &trans    &trans    &trans         &kp J  &kp END  &kp UP_ARROW   &kp PG_DN  &kp I  &kp O
+&trans    &trans    &trans    &trans    &trans    &trans        &kp INS  &kp LEFT_ARROW   &kp DOWN_ARROW   &kp RIGHT_ARROW  &kp DEL  &kp ESC
+                             &trans    &trans    &trans         &trans    &trans     &trans
             >;
         };
 
@@ -87,8 +87,8 @@
             display-name = "Fn";
             bindings = <
 &trans  &kp F1      &kp F2  &kp F3  &kp F4      &kp F5         &kp F6       &kp F7  &kp F8  &kp F9  &kp F10          &kp F11
-&trans  &bt BT_CLR  &trans  &trans  &sys_reset  &bootloader    &bootloader  &trans  &trans  &trans  &kp PRINTSCREEN  &kp F12
-&trans  &trans      &trans  &trans  &trans      &trans         &trans       &trans  &trans  &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
+&trans  &bt BT_CLR  &none  &none  &sys_reset  &bootloader        &bootloader  &none    &none    &none    &kp PRINTSCREEN  &kp F12
+&trans  &out OUT_USB  &out OUT_BLE  &none  &none   &none          &none         &none    &none    &none    &kp SCROLLLOCK   &kp PAUSE_BREAK
                             &trans  &trans      &trans         &trans       &trans  &trans
             >;
         };
