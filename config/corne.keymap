@@ -21,7 +21,7 @@ behaviors {
     sh_caps: sh_caps {
         compatible = "zmk,behavior-hold-tap";
         label = "SH_CAPS";
-        #binding-cells = <0>;
+        #binding-cells = <2>;
         bindings = < &kp CAPS &kp LEFT_SHIFT >;
     };
 };
