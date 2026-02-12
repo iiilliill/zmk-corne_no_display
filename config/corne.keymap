@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
-/ {
+ / {
     chosen {
         zmk,matrix_transform = &default_transform;
         // zmk,matrix_transform = &five_column_transform;
@@ -22,10 +22,12 @@
             compatible = "zmk,behavior-hold-tap";
             label = "SH_CAPS";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
             bindings = <&kp CAPS>, <&kp LEFT_SHIFT>;
         };
     };
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -33,61 +35,44 @@
         default_layer {
             display-name = "QWERTY";
 
-            // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   | 
-            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&sh_caps   &kp A  &kp S  &kp D     &kp F  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                        &kp LGUI  &mo 1  &kp SPACE    &lt 3 ENTER  &mo 2  &kp RALT
+                &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
+                &sh_caps   &kp A  &kp S  &kp D     &kp F  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+                &kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                            &kp LGUI  &mo 1  &kp SPC    &lt 3 ENTER  &mo 2  &kp RALT
             >;
         };
 
         lower_layer {
             display-name = "NUMBER";
 
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | SHFT | BTCL| BT0 | BT1 | BT2 | BT3 |   | none | none |  -  |  =  |  [  |   ]  |
-            // | CTRL |     |     |LALT |RCTRL|     |   |     |     |     |     |  \  |   ~  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
-
             bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                 &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3           &none           &none          &kp MINUS      &kp EQUAL     &kp LBKT      &kp RBKT
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &kp LALT          &kp RCTRL     &rgb_ug RGB_EFF        &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp BACKSLASH   &kp GRAVE
-                                         &trans        &trans        &trans              &trans          &trans          &trans
+                &trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                 &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
+                &trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3           &none           &none            &kp MINUS        &kp EQUAL        &kp LBKT      &kp RBKT
+                &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &kp LALT      &kp RCTRL     &rgb_ug RGB_EFF        &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp BACKSLASH   &kp GRAVE
+                                     &trans        &trans        &trans              &trans          &trans          &trans
             >;
         };
 
         raise_layer {
             display-name = "SYMBOL";
 
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  TS |  TS |  TS |  TS |  TS |   |  Y |HOME |  \  |PGUP |  U | BKSP |
-            // | SHFT |  TS |  TS |  TS |  TS |  TS |   |  J | END |  ↑  |PGDN |  I |   O  |
-            // | CTRL |  TS |  TS |  TS |  TS |  TS |   |INS |  ←  |  ↓  |  →  | DEL| ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
-
             bindings = <
-&trans    &trans    &trans    &trans    &trans    &trans         &kp Y  &kp HOME  &kp BACKSLASH  &kp PG_UP  &kp U  &kp BSPC
-&trans    &trans    &trans    &trans    &trans    &trans         &kp J  &kp END  &kp UP_ARROW   &kp PG_DN  &kp I  &kp O
-&trans    &trans    &trans    &trans    &trans    &trans        &kp INS  &kp LEFT_ARROW   &kp DOWN_ARROW   &kp RIGHT_ARROW  &kp DEL  &kp ESC
-                             &trans    &trans    &trans         &trans    &trans     &trans
+                &trans    &trans    &trans    &trans    &trans    &trans         &kp Y      &kp HOME        &kp BACKSLASH  &kp PAGE_UP     &kp U  &kp BSPC
+                &trans    &trans    &trans    &trans    &trans    &trans         &kp J      &kp END         &kp UP_ARROW   &kp PAGE_DOWN   &kp I  &kp O
+                &trans    &trans    &trans    &trans    &trans    &trans         &kp INSERT &kp LEFT_ARROW  &kp DOWN_ARROW &kp RIGHT_ARROW &kp DELETE &kp ESC
+                                     &trans    &trans    &trans         &trans    &trans     &trans
             >;
         };
 
         layer_3 {
             display-name = "Fn";
+
             bindings = <
-&trans  &kp F1      &kp F2  &kp F3  &kp F4      &kp F5         &kp F6       &kp F7  &kp F8  &kp F9  &kp F10          &kp F11
-&trans  &bt BT_CLR  &none  &none  &sys_reset  &bootloader        &bootloader  &none    &none    &none    &kp PRINTSCREEN  &kp F12
-&trans  &out OUT_USB  &out OUT_BLE  &none  &none   &none          &none         &none    &none    &none    &kp SCROLLLOCK   &kp PAUSE_BREAK
-                            &trans  &trans      &trans         &trans       &trans  &trans
+                &trans  &kp F1      &kp F2  &kp F3  &kp F4      &kp F5         &kp F6       &kp F7  &kp F8  &kp F9  &kp F10          &kp F11
+                &trans  &bt BT_CLR  &none  &none  &sys_reset  &bootloader   &bootloader  &none    &none    &none    &kp PSCRN        &kp F12
+                &trans  &out OUT_USB  &out OUT_BLE  &none  &none   &none        &none       &none    &none    &none    &kp SLCK         &kp PAUSE
+                                &trans  &trans      &trans         &trans       &trans  &trans
             >;
         };
     };
