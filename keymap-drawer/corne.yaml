@@ -152,7 +152,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:printer-outline$$
+  - PRINT SCREEN
   - F12
   - {t: '$$mdi:transfer$$', type: trans}
   - OUT USB
