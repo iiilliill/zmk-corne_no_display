@@ -17,17 +17,14 @@
         // zmk,matrix_transform = &five_column_transform;
     };
 
-    behaviors {
-        sh_caps: sh_caps {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SH_CAPS";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp CAPS>, <&kp LEFT_SHIFT>;
-        };
+behaviors {
+    sh_caps: sh_caps {
+        compatible = "zmk,behavior-hold-tap";
+        label = "SH_CAPS";
+        #binding-cells = <0>;
+        bindings = < &kp CAPS &kp LEFT_SHIFT >;
     };
+};
 
     keymap {
         compatible = "zmk,keymap";
