@@ -22,7 +22,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "SH_CAPS";
             #binding-cells = <2>;
-            bindings = < &kp CAPS &kp LEFT_SHIFT >;
+            bindings = < &kp LEFT_SHIFT &kp CAPS >;
         };
     };
 
