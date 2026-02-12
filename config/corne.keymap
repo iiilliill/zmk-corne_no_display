@@ -18,13 +18,14 @@
     };
 
 behaviors {
-    sh_caps: sh_caps {
+    sh_caps_test: sh_caps_test {
         compatible = "zmk,behavior-hold-tap";
-        label = "SH_CAPS";
+        label = "SH_CAPS_TEST";
         #binding-cells = <2>;
         bindings = < &kp CAPS &kp LEFT_SHIFT >;
     };
 };
+
 
     keymap {
         compatible = "zmk,keymap";
